@@ -1,3 +1,5 @@
+const { default: axios } = require("axios");
+
 // These are our tests - add, isNull...
 const functions = {
   add: (num1, num2) => num1 + num2,
@@ -8,10 +10,10 @@ const functions = {
     user["lastName"] = "Santo";
 
     return user
-  }
-  // add: function (num1, num2) {
-  //   return num1 + num2
-  // }
+  },
+  fetchUser: () => axios.get('https://jsonplaceholder.typicode.com/users/1')
+    .then(res => res.data)
+    .catch(err => 'error'),
 }
 
 // export the object
