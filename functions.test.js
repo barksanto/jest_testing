@@ -1,6 +1,16 @@
 const axios = require('axios');
 const functions = require('./functions');
 
+// run functionsbefore & after each test
+// beforeEach(() => initDatabase());
+// afterEach(() => closeDatabase());
+
+// run before ALL and after ALL
+beforeAll(() => initDatabase());
+afterAll(() => closeDatabase());
+
+const initDatabase = () => console.log('Database Initialized...');
+const closeDatabase = () => console.log('Database Closed...');
 
 
 // toBe()
